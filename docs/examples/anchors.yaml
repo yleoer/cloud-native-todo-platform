@@ -1,0 +1,8 @@
+versions:
+  go: &go_version "1.26.x"
+  docker: "29.x"
+tools:
+  api:
+    go: *go_version
+  cli:
+    go: *go_version

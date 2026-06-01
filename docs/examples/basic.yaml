@@ -1,0 +1,7 @@
+project:
+  name: cloud-native-todo-platform
+  stage: foundation
+tools:
+  - go
+  - docker
+  - kubectl
