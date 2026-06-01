@@ -1,0 +1,28 @@
+[Unit]
+Description=Todo Process Demo Service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=todo
+Group=todo
+EnvironmentFile=/etc/todo-platform/process-demo.env
+ExecStart=/opt/todo-platform/bin/todo-process-demo
+Restart=on-failure
+RestartSec=2s
+WorkingDirectory=/var/lib/todo-platform
+RuntimeDirectory=todo-platform
+RuntimeDirectoryMode=0750
+KillSignal=SIGTERM
+TimeoutStopSec=10
+MemoryMax=256M
+CPUQuota=80%
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/var/lib/todo-platform /var/log/todo-platform /run/todo-platform
+
+[Install]
+WantedBy=multi-user.target
